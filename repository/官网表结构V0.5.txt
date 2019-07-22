@@ -1,0 +1,53 @@
+校区表
+	address 地址
+学院表
+	title 学院名字
+课程表 
+	title = models.Charfield(max_length=32)
+	period周期
+	avg_salary 平均薪资
+	image
+	 
+班级表	
+	class_info 开班信息
+	class_type  choice
+	status 开班状态
+	teacher 多对多 关联导师表 
+导师表
+	name  
+	position 职位 choice
+	image  图片
+	introduction 简介
+视频表
+	av-type 视频分类
+	study_num 学习人数
+	upload_date 最新上传
+	title  视频名字
+	teacher 关联导师表
+视频详情表
+	title 分支课程名
+	src 链接
+书籍表
+	book_name
+	book_type
+	author
+	publisher
+	pub_time
+	initial_price  原价
+	discount_price 优惠价
+	book_size 16开
+	book_package
+	is_taozhuang  boolean
+	book_ISBN 书号
+	book_page_num 页数
+	image 图片
+书籍详情表
+	content_info 内容简介
+	author_info 作者简介
+	category 目录
+	pre_introduction 前言 longstring
+客户表
+	
+学生表
+招聘表
+文章表
