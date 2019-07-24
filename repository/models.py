@@ -21,3 +21,12 @@ class Article(models.Model):
 
 class ArticleDetail(models.Model):
     content = RichTextUploadingField(verbose_name='文章详情')
+
+
+class Feedback(models.Model):
+    type_choices = ((0, '未分类'),
+                    (1, '学习笔记'),
+                    (2, '学员评价'),
+                    (3, '入职邀约'))
+    img = models.ImageField(upload_to='img/feedback/' )
+    back_type = models.IntegerField(choices=type_choices, default=0)
