@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+
+    <h2>文章列表</h2>
+
+    <a href="{% url 'backend:article_add' %}" class="btn btn-primary">添加</a>
+    <table class="table table-hover table-bordered" style="margin-top: 20px">
+        <thead>
+        <tr>
+            <th>序号</th>
+            <th>标题</th>
+            <th>分类</th>
+            <th>操作</th>
+        </tr>
+
+        </thead>
+        <tbody>
+
+        {% for article in all_articles %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ article.title }}</td>
+                <td>{{ article.category }}</td>
+                <td>
+                    <a href="{% url 'backend:article_edit' article.pk %}"> <i class="fa fa-edit"></i> </a>
+                    <a href="{% url 'backend:article_del' article.pk %}"> <i class="fa fa-trash-o"></i> </a>
+
+                </td>
+            </tr>
+        {% endfor %}
+
+
+        </tbody>
+    </table>
+
+
+{% endblock %}
