@@ -23,7 +23,7 @@ def feedback_list(request, table=None):
 
 
 from rest_framework import generics
-from rest_framework import serializers
+
 from repository import models
 from web.serializers import FeedbackSerializer
 from web.pagination import DefaultPagination
@@ -32,7 +32,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 
 class AjaxFeedback(generics.ListAPIView, ):
     queryset = models.Feedback.objects.all()
-    serializer_class = FeedbackSerializer
-    pagination_class = DefaultPagination
-    filter_backends = [DjangoFilterBackend,]
-    filter_fields = ['back_type']
+    serializer_class = FeedbackSerializer   #序列化
+    pagination_class = DefaultPagination  #分页
+    filter_backends = [DjangoFilterBackend,]  #
+    filter_fields = ['back_type']  #过滤器
